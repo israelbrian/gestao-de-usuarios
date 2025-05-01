@@ -1,4 +1,5 @@
-from flask import Blueprint
+from flask import Blueprint, render_template
+from database.cliente import CLIENTES
 
 cliente_rout = Blueprint('cliente', __name__)
 
@@ -17,7 +18,7 @@ cliente_rout = Blueprint('cliente', __name__)
 # listar todos os clientes
 @cliente_rout.route('/')
 def lista_clientes():
-    return {'pagina': "lista_clientes"}
+    return render_template('lista_clientes.html', clientes=CLIENTES)
 
 # inserir os dados do cliente no servidor
 @cliente_rout.route('/', methods=['POST'])
@@ -27,21 +28,21 @@ def inserir_cliente():
 # Form para cadastro de cliente
 @cliente_rout.route('/new')
 def form_cliente():
-    return {'pagina': "formulario clientes"}
+    return render_template('form_cliente.html')
 
-# Exibir um cliente específico
+# Exibir dados de um cliente específico
 @cliente_rout.route('/<int:cliente_id>')
 def detalhe_cliente(cliente_id):
-    pass
+    return render_template('detalhe_cliente.html')
 
 # Formulario para editar um cliente
 @cliente_rout.route('/<int:cliente_id>/edit')
 def form_edit_cliente(cliente_id):
-    pass
+    return render_template('form_edit_cliente.html')
 
 # Atualizar informações do cliente
 @cliente_rout.route('/<int:cliente_id>/update', methods=['PUT'])
-def update_cliente(cliente_id):
+def atualizar_cliente(cliente_id):
     pass
 
 # Deletar um cliente específico

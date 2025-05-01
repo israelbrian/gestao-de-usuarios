@@ -1,0 +1,31 @@
+    <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      {% for cliente in clientes  %}
+
+      <tr>
+        <td scope="row">{{ cliente.id }}</td>
+        <td> {{cliente.nome}} </td>
+        <td> {{cliente.email}} </td>
+        <!-- <td> {{cliente.email}} </td> -->
+        <td> 
+          <button class="btn btn-primary" type="button">Editar</button>
+          <button class="btn btn-danger" type="button">Deletar</button>
+
+          </button>  
+        </td>
+        
+      </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
