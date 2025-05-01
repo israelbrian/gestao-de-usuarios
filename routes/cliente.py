@@ -35,16 +35,16 @@ def detalhe_cliente(cliente_id):
     pass
 
 # Formulario para editar um cliente
-@cliente_rout.route('/<int:cliente_id/edit>')
+@cliente_rout.route('/<int:cliente_id>/edit')
 def form_edit_cliente(cliente_id):
     pass
 
 # Atualizar informações do cliente
-@cliente_rout.route('/<int:cliente_id/update>', methods=['PUT'])
+@cliente_rout.route('/<int:cliente_id>/update', methods=['PUT'])
 def update_cliente(cliente_id):
     pass
 
 # Deletar um cliente específico
-@cliente_rout.route('/<int:cliente_id/delete>', methods=['DELETE'])
+@cliente_rout.route('/<int:cliente_id>/delete', methods=['DELETE'])
 def deletar_cliente(cliente_id):
     pass
