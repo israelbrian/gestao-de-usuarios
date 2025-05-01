@@ -8,23 +8,12 @@
       </tr>
     </thead>
 
-    <tbody>
+    <tbody id="lista_clientes">
 
       {% for cliente in clientes  %}
 
-      <tr>
-        <td scope="row">{{ cliente.id }}</td>
-        <td> {{cliente.nome}} </td>
-        <td> {{cliente.email}} </td>
-        <!-- <td> {{cliente.email}} </td> -->
-        <td> 
-          <button class="btn btn-primary" type="button">Editar</button>
-          <button class="btn btn-danger" type="button">Deletar</button>
-
-          </button>  
-        </td>
-        
-      </tr>
+      {% include 'item_cliente.html' %}
+      
       {% endfor %}
 
     </tbody>
