@@ -5,7 +5,11 @@
     <!-- <td> {{cliente.email}} </td> -->
     <td> 
       <button class="btn btn-primary" type="button">Editar</button>
-      <button class="btn btn-danger" type="button">Deletar</button>
+      <button class="btn btn-danger" type="button" 
+          c-delete="{{ url_for('cliente.deletar_cliente', cliente_id=cliente.id) }}>"
+          c-remove-closest="tr">
+            Deletar
+      </button>
 
       </button>  
     </td>
