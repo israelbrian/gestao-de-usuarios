@@ -10,11 +10,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
   </head>
   <body>
+
     <div class="container">
       <h1 class="text-center display-2">Gestão de clientes</h1>
       
       <!-- Formulario add cliente -->
-       <div c-container="{{ url_for('cliente.form_cliente') }}"></div>
+       <div id="form-cliente" 
+          c-container="{{ url_for('cliente.form_cliente') }}"></div>
 
        <hr>
       <!-- Lista de clientes -->
