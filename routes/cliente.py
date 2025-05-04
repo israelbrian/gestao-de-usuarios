@@ -3,7 +3,7 @@ from database.cliente import CLIENTES
 
 cliente_route = Blueprint('cliente', __name__)
 
-"""
+""" 
     Rotas do cliente
 
     - /clientes/ (GET) - Listar todos os clientes
@@ -43,7 +43,8 @@ def form_cliente():
 # Exibir dados de um cliente específico
 @cliente_route.route('/<int:cliente_id>')
 def detalhe_cliente(cliente_id):
-    return render_template('detalhe_cliente.html')
+    cliente = list(filter(lambda c: c['id'] == cliente_id, CLIENTES))[0]
+    return render_template('detalhe_cliente.html', cliente=cliente)
 
 # Formulario para editar um cliente
 @cliente_route.route('/<int:cliente_id>/edit')
